@@ -1,0 +1,71 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'scala'
+apply plugin: 'forge'
+
+version = "0.1-SNAPSHOT"
+group = "com.easyforger"
+archivesBaseName = "easyforger-autotester"
+
+minecraft {
+    version = "1.7.10-10.13.2.1291"
+    runDir = "eclipse"
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+
+    maven {
+        name "scalaz-bintray"
+        url "http://dl.bintray.com/scalaz/releases"
+    }
+}
+
+dependencies {
+    compile 'org.specs2:specs2-core_2.11:3.1.1'
+    compile 'org.specs2:specs2-html_2.11:3.1.1'
+    compile 'com.easyforger:easyforger-core:0.1-SNAPSHOT:deobf@jar'
+}
+
+processResources
+{
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    // copy everything else, thats not the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+idea {
+    module {
+        inheritOutputDirs = true
+    }
+}
