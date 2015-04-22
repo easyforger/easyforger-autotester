@@ -22,7 +22,7 @@ apply plugin: 'scala'
 apply plugin: 'forge'
 apply plugin: 'bintray-release'
 
-version = "0.1-SNAPSHOT"
+version = "0.2-SNAPSHOT"
 group = "com.easyforger"
 archivesBaseName = "easyforger-autotester"
 
@@ -44,7 +44,7 @@ repositories {
 dependencies {
     compile 'org.specs2:specs2-core_2.11:3.1.1'
     compile 'org.specs2:specs2-html_2.11:3.1.1'
-    compile 'com.easyforger:easyforger-core:0.1-SNAPSHOT:deobf@jar'
+    compile 'com.easyforger:easyforger-core:0.2-SNAPSHOT:deobf@jar'
 }
 
 processResources
@@ -91,7 +91,7 @@ publish {
     artifactId = archivesBaseName
 
     publishVersion = project.version
-    description = 'A DSL / Framework for developing Minecraft Forge mods.'
+    description = 'Unit tests for the EasyForger library.'
 
     website = 'https://easyforger.com'
     issueTracker = 'https://github.com/easyforger/easyforger-autotester/issues'
