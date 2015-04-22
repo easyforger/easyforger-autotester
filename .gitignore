@@ -21,3 +21,4 @@ easyforger-autotester.iml
 eclipse
 !eclipse/.metadata
 .gradle
+gradle.properties
