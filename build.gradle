@@ -27,8 +27,9 @@ group = "com.easyforger"
 archivesBaseName = "easyforger-autotester"
 
 minecraft {
-    version = "1.7.10-10.13.2.1291"
+    version = "1.8-11.14.1.1334"
     runDir = "eclipse"
+    mappings = "snapshot_20141130"
 }
 
 repositories {

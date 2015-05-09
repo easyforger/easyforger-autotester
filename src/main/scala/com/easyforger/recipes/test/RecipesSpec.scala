@@ -5,8 +5,6 @@ import net.minecraft.init.Items._
 import net.minecraft.item.ItemStack
 import org.specs2.mutable.Specification
 
-// TODO: documentar quando tiver algo ok e fechar a issue?
-
 class RecipesSpec extends Specification {
   sequential
   isolated

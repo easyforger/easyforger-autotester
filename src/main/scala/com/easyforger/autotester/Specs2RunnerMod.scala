@@ -1,8 +1,8 @@
 package com.easyforger.autotester
 
-import cpw.mods.fml.common.Mod
-import cpw.mods.fml.common.Mod.EventHandler
-import cpw.mods.fml.common.event.FMLPostInitializationEvent
+import net.minecraftforge.fml.common.Mod
+import net.minecraftforge.fml.common.Mod.EventHandler
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
 
 @Mod(modid = "easyforger-autotester", name = "EasyForger AutoTester", version = "0.1", modLanguage = "scala")
 object Specs2RunnerMod {
