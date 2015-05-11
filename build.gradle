@@ -22,7 +22,7 @@ apply plugin: 'scala'
 apply plugin: 'forge'
 apply plugin: 'bintray-release'
 
-version = "0.2"
+version = "0.3-SNAPSHOT"
 group = "com.easyforger"
 archivesBaseName = "easyforger-autotester"
 
@@ -45,7 +45,7 @@ repositories {
 dependencies {
     compile 'org.specs2:specs2-core_2.11:3.1.1'
     compile 'org.specs2:specs2-html_2.11:3.1.1'
-    compile 'com.easyforger:easyforger-core:0.2:deobf@jar'
+    compile 'com.easyforger:easyforger-core:0.3-SNAPSHOT:deobf@jar'
 }
 
 processResources
