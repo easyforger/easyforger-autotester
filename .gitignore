@@ -22,3 +22,4 @@ eclipse
 !eclipse/.metadata
 .gradle
 gradle.properties
+build
