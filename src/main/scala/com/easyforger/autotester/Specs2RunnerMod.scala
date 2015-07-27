@@ -4,7 +4,7 @@ import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.Mod.EventHandler
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
 
-@Mod(modid = "easyforger-autotester", name = "EasyForger AutoTester", version = "0.1", modLanguage = "scala")
+@Mod(modid = "easyforger-autotester", name = "EasyForger AutoTester", version = "0.3", modLanguage = "scala")
 object Specs2RunnerMod {
 
   @EventHandler
