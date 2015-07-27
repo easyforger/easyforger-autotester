@@ -5,7 +5,7 @@ import net.minecraft.init.Items._
 import net.minecraft.item.ItemStack
 import org.specs2.mutable.Specification
 
-class RecipesSpec extends Specification {
+class ShapedRecipesSpec extends Specification {
   sequential
   isolated
 
@@ -30,6 +30,24 @@ class RecipesSpec extends Specification {
       params(4).asInstanceOf[ItemStack] must beSameStackAs(new ItemStack(leather))
       params(5) === 'i'
       params(6).asInstanceOf[ItemStack] must beSameStackAs(new ItemStack(iron_ingot))
+    }
+
+    "have the components for diamond + carrots to armor stand" in {
+      val recipe = diamond + carrot to armor_stand withShape
+        """
+          |.c.
+          |.d.
+          |.d.
+        """.stripMargin
+
+      val params = Crafting.calcParamsArrays(recipe)
+      params(0) === " c "
+      params(1) === " d "
+      params(2) === " d "
+      params(3) === 'd'
+      params(4).asInstanceOf[ItemStack] must beSameStackAs(new ItemStack(diamond))
+      params(5) === 'c'
+      params(6).asInstanceOf[ItemStack] must beSameStackAs(new ItemStack(carrot))
     }
   }
 }
