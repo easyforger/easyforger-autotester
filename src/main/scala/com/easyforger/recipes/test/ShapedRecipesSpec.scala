@@ -4,14 +4,13 @@
  */
 package com.easyforger.recipes.test
 
-// TODO: change the DSL to avoid this import to be even necessary at all
-import com.easyforger.recipes._ //scalastyle:ignore
+import com.easyforger.base.EasyForger
 import net.minecraft.init.Items
 import net.minecraft.item.ItemStack
 import org.specs2.matcher.Matcher
 import org.specs2.mutable.Specification
 
-class ShapedRecipesSpec extends Specification {
+class ShapedRecipesSpec extends Specification with EasyForger {
   sequential
   isolated
 
@@ -19,7 +18,7 @@ class ShapedRecipesSpec extends Specification {
     ((_: ItemStack).stackSize) ^^ ===(itemStack.stackSize) and
     ((_: ItemStack).getItem) ^^ ===(itemStack.getItem)
 
-  "a dsl recipe" should {
+  "a dsl shaped recipe" should {
     "have the components for the saddle" in {
       val recipe = (Items.leather + Items.iron_ingot) to Items.saddle withShape
         """
@@ -28,7 +27,7 @@ class ShapedRecipesSpec extends Specification {
           |i.i
         """.stripMargin
 
-      val params = Crafting.calcParamsArrays(recipe)
+      val params = calcParamsArrays(recipe)
       params(0) === "   "
       params(1) === "lll"
       params(2) === "i i"
@@ -46,7 +45,7 @@ class ShapedRecipesSpec extends Specification {
           |.d.
         """.stripMargin
 
-      val params = Crafting.calcParamsArrays(recipe)
+      val params = calcParamsArrays(recipe)
       params(0) === " c "
       params(1) === " d " // scalastyle:ignore
       params(2) === " d "
@@ -54,6 +53,25 @@ class ShapedRecipesSpec extends Specification {
       params(4).asInstanceOf[ItemStack] must beSameStackAs(new ItemStack(Items.diamond))
       params(5) === 'c'
       params(6).asInstanceOf[ItemStack] must beSameStackAs(new ItemStack(Items.carrot))
+    }
+
+    "have the components for iron_ingot + redDye to apple" in {
+      val recipe = Items.iron_ingot + redDye to Items.apple withShape
+        """
+          |.i.
+          |.i.
+          |.r.
+        """.stripMargin
+
+      val params = calcParamsArrays(recipe)
+
+      params(0) === " i " // scalastyle:ignore
+      params(1) === " i "
+      params(2) === " r "
+      params(3) === 'i'
+      params(4).asInstanceOf[ItemStack] must beSameStackAs(new ItemStack(Items.iron_ingot))
+      params(5) === 'r'
+      params(6).asInstanceOf[ItemStack] must beSameStackAs(redDye)
     }
   }
 }

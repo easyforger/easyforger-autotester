@@ -53,13 +53,20 @@ repositories {
 }
 
 dependencies {
-    compile 'org.specs2:specs2-core_2.11:3.1.1'
-    compile 'org.specs2:specs2-html_2.11:3.1.1'
+    // force forge's required asm version - specs2 brings 4.1 transitively
+    compile 'org.ow2.asm:asm:5.0.3'
+    compile 'org.ow2.asm:asm-util:5.0.3'
+    compile 'org.ow2.asm:asm-tree:5.0.3'
+    compile 'org.ow2.asm:asm-analysis:5.0.3'
+
+    compile 'org.specs2:specs2-core_2.11:3.8.2'
+    compile 'org.specs2:specs2-html_2.11:3.8.2'
+
     compile 'com.easyforger:easyforger-core:' + project.version + ':deobf@jar'
 }
 
 minecraft {
-    version = "1.8.9-11.15.1.1722"
+    version = "1.8.9-11.15.1.1902-1.8.9"
     runDir = "run"
     mappings = "stable_20"
 }

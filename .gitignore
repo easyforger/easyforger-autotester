@@ -1,3 +1,5 @@
+/easyforger-autotester.ipr
+/easyforger-autotester.iws
 *.class
 *.log
 
@@ -17,9 +19,9 @@ project/plugins/project/
 .worksheet
 
 .idea
-easyforger-autotester.iml
-eclipse
+eclipse/
+run/
 !eclipse/.metadata
 .gradle
 gradle.properties
-build
+build/
