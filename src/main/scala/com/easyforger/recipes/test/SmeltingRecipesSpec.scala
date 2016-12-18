@@ -4,20 +4,21 @@
  */
 package com.easyforger.recipes.test
 
-import com.easyforger.base.EasyForger
 import net.minecraft.init.Items
 import net.minecraft.item.ItemStack
 import net.minecraft.item.crafting.FurnaceRecipes
 import org.specs2.mutable.Specification
 
-class SmeltingRecipesSpec extends Specification with EasyForger {
+class SmeltingRecipesSpec extends Specification {
+  import com.easyforger.autotester.Specs2RunnerMod._ // scalastyle:ignore
+
   "creating smelting recipes" should {
     "register baking apple resulting in a cake" in {
-      smelting(Items.apple to Items.cake)
+      smelting(Items.APPLE to Items.CAKE)
 
-      val smeltingResult = FurnaceRecipes.instance().getSmeltingResult(new ItemStack(Items.apple))
+      val smeltingResult = FurnaceRecipes.instance().getSmeltingResult(new ItemStack(Items.APPLE))
 
-      smeltingResult.getItem === Items.cake
+      smeltingResult.getItem === Items.CAKE
     }
   }
 }

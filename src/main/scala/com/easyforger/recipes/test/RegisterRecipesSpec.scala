@@ -4,7 +4,6 @@
  */
 package com.easyforger.recipes.test
 
-import com.easyforger.base.EasyForger
 import net.minecraft.init.Items
 import net.minecraft.item.ItemStack
 import net.minecraft.item.crafting.{CraftingManager, ShapelessRecipes}
@@ -12,10 +11,12 @@ import org.specs2.mutable.Specification
 
 import scala.collection.JavaConverters.asScalaBufferConverter
 
-class RegisterRecipesSpec extends Specification with EasyForger {
+class RegisterRecipesSpec extends Specification {
+  import com.easyforger.autotester.Specs2RunnerMod._ // scalastyle:ignore
+
   "a recipe" should {
     "register diamond + carrot to armor_stand" in {
-      crafting(Items.diamond + Items.carrot to Items.armor_stand(2))
+      crafting(Items.DIAMOND + Items.CARROT to Items.ARMOR_STAND(2))
 
       val recipesList = CraftingManager.getInstance().getRecipeList
 

@@ -4,12 +4,13 @@
  */
 package com.easyforger.autotester
 
+import com.easyforger.base.EasyForger
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.Mod.EventHandler
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
 
-@Mod(modid = "easyforger-autotester", name = "EasyForger AutoTester", version = "0.3", modLanguage = "scala")
-object Specs2RunnerMod {
+@Mod(modid = "easyforger-autotester", name = "EasyForger AutoTester", version = "0.5", modLanguage = "scala")
+object Specs2RunnerMod extends EasyForger {
 
   @EventHandler
   def postInit(event: FMLPostInitializationEvent): Unit = {
