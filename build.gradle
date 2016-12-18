@@ -6,14 +6,10 @@ buildscript {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
     }
     dependencies {
         classpath 'org.github.ngbinh.scalastyle:gradle-scalastyle-plugin_2.11:0.8.2'
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
         classpath 'com.novoda:bintray-release:0.3.2'
     }
 }
@@ -66,9 +62,9 @@ dependencies {
 }
 
 minecraft {
-    version = "1.8.9-11.15.1.1902-1.8.9"
+    version = "1.10.2-12.18.2.2099"
     runDir = "run"
-    mappings = "stable_20"
+    mappings = "snapshot_20161103"
 }
 
 processResources
