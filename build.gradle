@@ -55,8 +55,8 @@ dependencies {
     compile 'org.ow2.asm:asm-tree:5.0.3'
     compile 'org.ow2.asm:asm-analysis:5.0.3'
 
-    compile 'org.specs2:specs2-core_2.11:3.8.2'
-    compile 'org.specs2:specs2-html_2.11:3.8.2'
+    compile 'org.specs2:specs2-core_2.11:3.8.6'
+    compile 'org.specs2:specs2-html_2.11:3.8.6'
 
     compile 'com.easyforger:easyforger-core:' + project.version + ':deobf@jar'
 }

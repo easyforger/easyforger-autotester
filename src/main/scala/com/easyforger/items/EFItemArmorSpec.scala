@@ -12,11 +12,11 @@ import org.specs2.mutable.Specification
 class EFItemArmorSpec extends Specification with ThrownExpectations {
   "a new EFItemArmor" should {
     "have the correct name" in {
-      myItemArmorFeet.name ==== "iron_boots"
+      myItemArmorFeet.name must_=== "iron_boots"
     }
 
     "have the correct unlocalized name" in {
-      myItemArmorFeet.getUnlocalizedName() ==== "item.my-mod-id_iron_boots"
+      myItemArmorFeet.getUnlocalizedName() must_=== "item.my-mod-id_iron_boots"
     }
   }
 
