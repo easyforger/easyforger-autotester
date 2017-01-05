@@ -20,17 +20,17 @@ class CreaturesHandlerSpec extends Specification with ThrownExpectations {
 
     "have the new Creeper" in {
       all must not contain classOf[EntityCreeper]
-      all must contain(classOf[CustomCreeper])
+      all must contain(classOf[EFCustomCreeper])
     }
 
     "have the new Zombie" in {
       all must not contain classOf[EntityZombie]
-      all must contain(classOf[CustomZombie])
+      all must contain(classOf[EFCustomZombie])
     }
 
     "have the new Skeleton" in {
       all must not contain classOf[EntitySkeleton]
-      all must contain(classOf[CustomSkeleton])
+      all must contain(classOf[EFCustomSkeleton])
     }
   }
 
