@@ -17,7 +17,7 @@ class ShapedRecipesSpec extends Specification {
   isolated
 
   def beSameStackAs(itemStack: ItemStack): Matcher[ItemStack] =
-    ((_: ItemStack).stackSize) ^^ ===(itemStack.stackSize) and
+    ((_: ItemStack).getCount) ^^ ===(itemStack.getCount) and
     ((_: ItemStack).getItem) ^^ ===(itemStack.getItem)
 
   "a dsl shaped recipe" should {
