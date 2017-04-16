@@ -9,8 +9,9 @@ import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.Mod.EventHandler
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
 
-@Mod(modid = "easyforger-autotester", name = "EasyForger AutoTester", version = "0.5", modLanguage = "scala")
+@Mod(modid = Specs2RunnerMod.modId, name = "EasyForger AutoTester", version = "0.6", modLanguage = "scala")
 object Specs2RunnerMod extends EasyForger {
+  final val modId = "easyforger-autotester"
 
   @EventHandler
   def postInit(event: FMLPostInitializationEvent): Unit = {
